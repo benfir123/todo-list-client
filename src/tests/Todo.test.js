@@ -1,6 +1,7 @@
 import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
+import Todo from "../components/Todo";
 
 let todos;
 
@@ -14,7 +15,11 @@ beforeEach(() => {
 describe("Todo component", () => {
   it("renders a completed todo", () => {
     render(
-      <Todo title={todos[0].title} is_completed={todos[0].is_completed} />
+      <Todo
+        title={todos[0].title}
+        is_completed={todos[0].is_completed}
+        provided={{ test: 1 }}
+      />
     );
     expect(screen.getByText("Meet Emma")).toHaveStyle(
       "text-decoration: line-through;"
@@ -22,7 +27,11 @@ describe("Todo component", () => {
   });
   it("renders a not completed todo", () => {
     render(
-      <Todo title={todos[1].title} is_completed={todos[1].is_completed} />
+      <Todo
+        title={todos[1].title}
+        is_completed={todos[1].is_completed}
+        provided={{ test: 2 }}
+      />
     );
     expect(screen.getByText("Go to market")).not.toHaveStyle(
       "text-decoration: line-through;"

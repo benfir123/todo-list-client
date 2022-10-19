@@ -9,6 +9,7 @@ export const StyledFooter = styled.footer`
   border-radius: 0px 0px 20px 20px;
   display: flex;
   justify-content: space-between;
+  position: relative;
 
   a {
     color: ${({ theme }) => theme.colors.button};
@@ -26,5 +27,13 @@ export const StyledFooter = styled.footer`
 
   input::placeholder {
     color: #c4c4c4;
+  }
+  small {
+    font-size: xx-small;
+    color: #ff7575;
+    position: absolute;
+    bottom: 15%;
+    left: 8%;
+    font-weight: 400;
   }
 `;

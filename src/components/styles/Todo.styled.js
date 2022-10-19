@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const StyledTodo = styled.div`
   display: flex;
   gap: 13px;
+  background-color: ${({ isDragging }) => isDragging && "#d7f5ea;"};
+
+  border-radius: 4px;
 
   svg:first-child {
     min-width: 19px;
@@ -10,7 +13,6 @@ export const StyledTodo = styled.div`
   }
 
   svg:last-child {
-    margin-top: 4px;
     min-width: 11px;
     min-height: 11px;
   }
@@ -20,5 +22,9 @@ export const StyledTodo = styled.div`
     padding-top: 1px;
     text-decoration: ${({ is_completed }) => is_completed && "line-through;"};
     color: ${({ is_completed }) => is_completed && "#BCBCBC;"};
+  }
+
+  a:last-child {
+    margin-top: 1px;
   }
 `;

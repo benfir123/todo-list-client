@@ -1,6 +1,7 @@
 import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
+import Header from "../components/Header";
 
 let todos;
 
@@ -16,7 +17,7 @@ beforeEach(() => {
 
 describe("Header component", () => {
   it("renders the correct number of current tasks", () => {
-    render(<Header numberOfTodos={todos.length} />);
+    render(<Header todos={todos} />);
     expect(screen.getByText("5 Tasks")).toBeInTheDocument();
   });
 });

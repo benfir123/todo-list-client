@@ -2,6 +2,7 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import Footer from "../components/Footer";
 
 describe("Footer component", () => {
   it("calls onChange the correct number of times", () => {

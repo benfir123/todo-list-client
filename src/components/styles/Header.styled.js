@@ -16,4 +16,7 @@ export const StyledHeader = styled.header`
     font-style: italic;
     font-size: 12px;
   }
+  svg {
+    margin-top: 3px;
+  }
 `;
