@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# Todo List
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The front-end of a CRUD todo list application made with React.js
 
-## Available Scripts
+[API repository](https://github.com/benfir123/todolistapi)
 
-In the project directory, you can run:
+![todoapp-screen](https://user-images.githubusercontent.com/48757880/196851886-69185545-9e75-44c9-acbc-06125e2f2e63.png)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [x] Add new todo
+- [x] Delete todo
+- [x] Clear todo list
+- [x] Mark todo as done
+- [x] Show todo list
+- [x] Reorder todo list
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies used
 
-### `npm test`
+- [React](https://pl.reactjs.org/) (Bootstrapped using [Create React App](https://create-react-app.dev/))
+- [styled components](https://styled-components.com/)
+- [React Beautiful Dnd](https://github.com/atlassian/react-beautiful-dnd)
+- [Jest](https://jestjs.io/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## How to use the app
 
-### `npm run build`
+### Step 1
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Ensure that you also have the API server running. This app requires a functioning API back-end to work properly. See API repository :point_right: [link](https://github.com/benfir123/todolistapi).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Step 2
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Clone repository
 
-### `npm run eject`
+```
+git clone https://github.com/benfir123/todo-list-client.git
+cd todo-list-client
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Step 3
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Run app in development mode
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+npm i
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Step 4
 
-## Learn More
+Have fun with the different features! - add, delete, clear, mark done, and reorder your todos.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## More about the project
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This todo list was developed following Test First principles. All the requirements were converted into test cases and code was then refactored to pass said cases. The main piece of business logic was being able to reorder your todos. We decided to use the library react-beautiful-dnd for this. Once the user has selected the new order of their todo list, the array is then rearranged using array splicing. The entire state of the UI is managed using local state from React.
