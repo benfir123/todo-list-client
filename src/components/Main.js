@@ -10,11 +10,15 @@ const Main = ({
 }) => {
   return (
     <DragDropContext
+      // When user finishes dragging (drops the item), then receive source and destination
+      // position and pass them to reordering function.
       onDragEnd={(param) => {
         if (!param.destination) return;
         const srcI = param.source.index;
         const desI = param.destination.index;
+        // sort current todo list (local state variable)
         todos.splice(desI, 0, todos.splice(srcI, 1)[0]);
+        // pass data to call API and sort on the back-end
         handleTodoSort(srcI, desI);
       }}
     >

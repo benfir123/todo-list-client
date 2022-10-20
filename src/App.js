@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import GlobalStyles from "./components/styles/Global";
 import { useEffect } from "react";
 
+// Define color scheme of the app which is managed by styled components
 const theme = {
   colors: {
     header: "#FFFFFF",
@@ -18,10 +19,12 @@ const theme = {
 };
 
 function App() {
+  // Initialize React local state variables
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState("");
   const [newTodoError, setNewTodoError] = useState("");
 
+  // Fetch the current todo list from the back-end
   useEffect(() => {
     const requestOptions = {
       method: "GET",
@@ -145,6 +148,7 @@ function App() {
     return sortedArr;
   };
 
+  // Define function that validates the new todo form of the app
   const validate = () => {
     let newTodoError = "";
 
