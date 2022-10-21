@@ -19,10 +19,8 @@ const theme = {
 };
 
 function App() {
-  // Initialize React local state variables
+  // Initialize React local state variable
   const [todos, setTodos] = useState([]);
-  const [newTodo, setNewTodo] = useState("");
-  const [newTodoError, setNewTodoError] = useState("");
 
   // Fetch the current todo list from the back-end
   useEffect(() => {
@@ -41,12 +39,6 @@ function App() {
   }, []);
 
   const handleTodoSubmit = (newTodo) => {
-    const isValid = validate();
-    if (isValid) {
-      setNewTodoError("");
-    } else {
-      return;
-    }
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -56,7 +48,6 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
         setTodos(data);
-        setNewTodo("");
       })
       .catch((error) => {
         console.log(error);
@@ -143,20 +134,6 @@ function App() {
   //   return sortedArr;
   // };
 
-  // Define function that validates the new todo form of the app
-  const validate = () => {
-    let newTodoError = "";
-
-    if (!newTodo) {
-      newTodoError = "todo cannot be blank";
-    }
-    if (newTodoError) {
-      setNewTodoError(newTodoError);
-      return false;
-    }
-    return true;
-  };
-
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
@@ -168,12 +145,7 @@ function App() {
           handleTodoComplete={handleTodoComplete}
           handleTodoSort={handleTodoSort}
         />
-        <Footer
-          newTodo={newTodo}
-          setNewTodo={setNewTodo}
-          newTodoError={newTodoError}
-          handleTodoSubmit={handleTodoSubmit}
-        />
+        <Footer handleTodoSubmit={handleTodoSubmit} />
       </Container>
     </ThemeProvider>
   );

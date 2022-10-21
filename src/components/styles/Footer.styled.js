@@ -7,13 +7,23 @@ export const StyledFooter = styled.footer`
   margin-top: auto;
   padding: 20px;
   border-radius: 0px 0px 20px 20px;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
 
-  a {
+  form {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  button {
     color: ${({ theme }) => theme.colors.button};
     text-decoration: none;
+    background-color: transparent;
+    border: 0px transparent solid;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  button:hover {
+    filter: brightness(90%);
   }
 
   input {
