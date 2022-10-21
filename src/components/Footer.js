@@ -9,12 +9,18 @@ const Footer = ({ newTodo, setNewTodo, newTodoError, handleTodoSubmit }) => {
         value={newTodo}
         onChange={(e) => setNewTodo(e.target.value)}
         onKeyDown={(e) => {
+          //use form submit
           if (e.key === "Enter") {
             handleTodoSubmit(newTodo);
           }
         }}
       />
-      <a href="#" onClick={() => handleTodoSubmit(newTodo)}>
+      <a
+        href="#"
+        onClick={() => {
+          handleTodoSubmit(newTodo);
+        }}
+      >
         Add
       </a>
       {newTodoError && <small>{newTodoError}</small>}
