@@ -55,12 +55,7 @@ function App() {
     fetch("http://localhost:8000/api/todos/", requestOptions)
       .then((response) => response.json())
       .then((data) => {
-        const incrementedTodoList = todos.map((todo) => ({
-          ...todo,
-          position: (todo.position += 1),
-        }));
-        const updatedTodoList = [...incrementedTodoList, data];
-        setTodos(sortTodos(updatedTodoList));
+        setTodos(data);
         setNewTodo("");
       })
       .catch((error) => {
@@ -143,10 +138,10 @@ function App() {
       });
   };
 
-  const sortTodos = (arr) => {
-    const sortedArr = arr.sort((a, b) => a.position - b.position);
-    return sortedArr;
-  };
+  // const sortTodos = (arr) => {
+  //   const sortedArr = arr.sort((a, b) => a.position - b.position);
+  //   return sortedArr;
+  // };
 
   // Define function that validates the new todo form of the app
   const validate = () => {
