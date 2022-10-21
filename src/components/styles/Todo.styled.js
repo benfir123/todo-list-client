@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledTodo = styled.div`
   display: flex;
-  gap: 13px;
+  gap: 10px;
   background-color: ${({ isDragging }) => isDragging && "#d7f5ea;"};
 
   border-radius: 4px;
